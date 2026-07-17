@@ -17,8 +17,8 @@ interface Props {
 const { title, description, author, pubDate, wordCount = 0, tags = [], categories = [], thumbnail } = Astro.props;
 
 // 处理 og:image URL（无图时用站点默认图）
-const ogImage = thumbnail || 'https://ja.krya.com/og-image.png';
-const isDefaultOg = ogImage === 'https://ja.krya.com/og-image.png';
+const ogImage = thumbnail || 'https://jp.krya.com/og-image.png';
+const isDefaultOg = ogImage === 'https://jp.krya.com/og-image.png';
 ---
 
 <BaseLayout

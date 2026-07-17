@@ -64,7 +64,7 @@ export async function GET(context) {
   return rss({
     title: 'krya | jin 的个人博客',
     description: 'Jin 的个人博客 - 旅行、生活、感悟',
-    site: 'https://ja.krya.com',
+    site: 'https://jp.krya.com',
     items: await Promise.all(sortedPosts.map(async (post) => {
       const markdownContent = post.body || '';
       const htmlString = await marked.parse(markdownContent);

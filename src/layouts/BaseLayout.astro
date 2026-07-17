@@ -10,7 +10,7 @@ interface Props {
   type?: string;
 }
 
-const DEFAULT_OG = 'https://ja.krya.com/og-image.png';
+const DEFAULT_OG = 'https://jp.krya.com/og-image.png';
 const DEFAULT_OG_W = 120;
 const DEFAULT_OG_H = 120;
 
@@ -53,7 +53,7 @@ import '../styles/style.css';
     <meta property="og:site_name" content="krya" />
     
     <!-- Canonical URL (文章页会覆盖) -->
-    <link rel="canonical" href={`https://ja.krya.com${Astro.url.pathname}`} />
+    <link rel="canonical" href={`https://jp.krya.com${Astro.url.pathname}`} />
     
     <!-- 插入额外 head 内容（如 article meta / JSON-LD） -->
     <slot name="head" />
@@ -125,7 +125,7 @@ import '../styles/style.css';
       © 2008-{new Date().getFullYear()}. Astro & <a href="https://github.com/ezzty/krya-ja" target="_blank" rel="noopener noreferrer" class="footer-link">Sintu Theme</a>
       <br />
       Stay Young ♥️ Stay Simple
-      <div class="footer-social">
+            <div class="footer-social">
         <a href="/rss.xml" class="footer-link" title="RSSフィード" target="_blank" rel="noopener noreferrer">RSS</a>
         <span class="footer-divider">|</span>
         <a href="https://krya.com/" class="footer-link" title="中文" target="_blank" rel="noopener noreferrer">中文</a>
@@ -136,7 +136,7 @@ import '../styles/style.css';
         <span class="footer-divider">|</span>
         <a href="https://de.krya.com/" class="footer-link" title="Deutsch" target="_blank" rel="noopener noreferrer">DE</a>
       </div>
-    </footer>
+</footer>
     
     <!-- Umami Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="9f0742ab-e931-4ae5-a978-6e0c611cc1b8"></script>

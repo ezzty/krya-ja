@@ -1,6 +1,6 @@
 # krya-ja
 
-krya の日本語版: https://ja.krya.com
+krya の日本語版: https://jp.krya.com
 
 - スタイルベース: **krya**（CJK 向けレイアウト + Pagefind）
 - 日本語フォント・行間を調整済み

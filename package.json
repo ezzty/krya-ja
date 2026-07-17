@@ -2,7 +2,7 @@
   "name": "krya-ja",
   "type": "module",
   "version": "1.0.0",
-  "description": "ja.krya.com - Jin の個人ブログ（Astro・日本語）",
+  "description": "jp.krya.com - Jin の個人ブログ（Astro・日本語）",
   "author": "Jin",
   "scripts": {
     "dev": "astro dev",

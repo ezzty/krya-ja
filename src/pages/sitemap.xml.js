@@ -11,7 +11,7 @@ export async function GET() {
     return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
   });
 
-  const siteUrl = 'https://ja.krya.com';
+  const siteUrl = 'https://jp.krya.com';
   // 列表页 lastmod 用最新文章时间，而不是构建时刻
   const latestPostMod = sortedPosts.length
     ? new Date(sortedPosts[0].data.pubDate).toISOString()
