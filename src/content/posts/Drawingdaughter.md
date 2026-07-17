@@ -1,12 +1,14 @@
 ---
-title: "A Drawing of my daughter"
+title: 娘が描いた一枚の絵
 pubDate: 2024-07-19
-categories: ["生活"]
-tags: ["Children-Picture"]
+categories:
+- 生活
+tags:
+- 子どもの絵
 draft: false
 ---
 
 ![rain2.jpg](https://i.190808.xyz/typecho/2024/07/19/rain2.jpg?x-oss-process=style/826px)
-This is a drawing my daughter made when she was 4 years old. It depicts our family picking rainbow fruit in a garden. Neither of us has any talent for painting, so we never taught her any drawing skills, but we always encouraged her to paint what she sees and thinks.
+これは娘が4歳のときに描いた絵です。庭で虹色の果物を摘む家族の様子が描かれています。私も妻も絵心がまったくないので、娘に絵の技術を教えたことは一度もありません。ただ、見たものや思ったことを自由に描いていいよ、とずっと励ましてきました。
 
-During childhood, children have many questions about the world that need to be explained by us. But can you answer them all? Never! Absolutely not! Rather than teaching them incorrect knowledge, it's better to keep quiet and let the children explore the answers on their own.
+子ども時代、彼らは世界についてたくさんの疑問を持ち、私たちに説明を求めます。でも、すべてに答えられるでしょうか？いいえ、絶対に無理です！間違った知識を教えるくらいなら、むしろ黙って、子ども自身に答えを探させるほうがいいのです。
