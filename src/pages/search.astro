@@ -1,0 +1,230 @@
+---
+import NavBar from '../components/NavBar.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="検索">
+  <NavBar slot="header" />
+  
+  <div class="search-page">
+    <div id="search"></div>
+  </div>
+</BaseLayout>
+
+<style>
+  .search-page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 130px 20px 40px;
+  }
+
+  @media (max-width: 768px) {
+    .search-page {
+      padding-top: 110px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+</style>
+
+<style is:inline>
+  /* Pagefind UI - 匹配博客 style.css 风格 */
+
+  /* 検索容器 */
+  .pagefind-ui {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: var(--link-color, #3354aa);
+    --pagefind-ui-text: var(--text-color, #444);
+    --pagefind-ui-background: transparent;
+    --pagefind-ui-border: var(--border-color, #eee);
+    --pagefind-ui-tag: var(--card-bg, #f8f8f8);
+    --pagefind-ui-border-width: 0;
+    --pagefind-ui-border-radius: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Noto Sans CJK Regular", sans-serif;
+  }
+
+  /* 検索输入框 - 高度匹配 category-item */
+  .pagefind-ui .pagefind-ui__search-input {
+    height: auto;
+    padding: 8px 16px 8px 36px;
+    font-size: 1em;
+    font-weight: 400;
+    width: 100%;
+    border: 1px solid var(--border-input, #ccc);
+    border-radius: 8px;
+    background: var(--bg-color, #fff);
+    color: var(--text-color, #444);
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+  }
+
+  .pagefind-ui .pagefind-ui__search-input:focus {
+    outline: none;
+    border-color: var(--link-color, #4a90d9);
+  }
+
+  .pagefind-ui .pagefind-ui__search-input::placeholder {
+    color: #666;
+  }
+
+  /* 検索图标 - 垂直居中 */
+  .pagefind-ui .pagefind-ui__form::before {
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+  }
+
+  /* 清除按钮 */
+  .pagefind-ui .pagefind-ui__search-clear {
+    display: none;
+  }
+
+  /* 検索结果计数 */
+  .pagefind-ui .pagefind-ui__results-message {
+    font-size: 14px;
+    color: var(--text-secondary, #666);
+    padding: 20px 0 10px;
+    border: none;
+  }
+
+  /* 结果列表 */
+  .pagefind-ui .pagefind-ui__results {
+    padding: 0;
+    list-style: none;
+  }
+
+  /* 单个结果项 - 参考 .post 样式 */
+  .pagefind-ui .pagefind-ui__result {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color, #eee);
+    margin: 0;
+    background: transparent;
+  }
+
+  .pagefind-ui .pagefind-ui__result:last-child {
+    border-bottom: none;
+  }
+
+  /* 结果标题 */
+  .pagefind-ui .pagefind-ui__result-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin: 0 0 8px;
+  }
+
+  .pagefind-ui .pagefind-ui__result-title a {
+    color: var(--heading-color, #4d4d4d);
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  .pagefind-ui .pagefind-ui__result-title a:hover {
+    color: var(--link-color, #3354aa);
+  }
+
+  /* 结果摘要 */
+  .pagefind-ui .pagefind-ui__result-excerpt {
+    font-size: 0.95em;
+    line-height: 1.8;
+    color: var(--text-secondary, #666);
+    margin: 0;
+    overflow-wrap: break-word;
+  }
+
+  /* 検索高亮 */
+  .pagefind-ui .pagefind-ui__result-excerpt mark,
+  .pagefind-ui mark {
+    background-color: transparent;
+    color: var(--link-color, #3354aa);
+    font-weight: 600;
+    padding: 0;
+  }
+
+  /* 子结果 */
+  .pagefind-ui .pagefind-ui__result-nested {
+    padding-left: 16px;
+    border-left: 2px solid var(--border-color, #eee);
+    margin-top: 12px;
+  }
+
+  /* 去掉链接下划线 */
+  .pagefind-ui .pagefind-ui__result-link {
+    border-bottom: none;
+    text-decoration: none;
+  }
+
+  /* 暗黑模式 */
+  html[data-theme="dark"] .pagefind-ui {
+    --pagefind-ui-text: #e0e0e0;
+    --pagefind-ui-background: transparent;
+    --pagefind-ui-border: #3a3a3a;
+    --pagefind-ui-tag: #2a2a2a;
+    --pagefind-ui-primary: #5a8bff;
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__search-input {
+    background: var(--bg-color, #252525);
+    border-color: var(--border-input, #555);
+    color: #e0e0e0;
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__search-input:focus {
+    border-color: var(--link-color, #5a8bff);
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__search-input::placeholder {
+    color: #888;
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__results-message {
+    color: var(--text-muted, #999);
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__result-title a {
+    color: var(--text-color, #e0e0e0);
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__result-title a:hover {
+    color: #5a8bff;
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__result-excerpt {
+    color: #aaa;
+  }
+
+  html[data-theme="dark"] .pagefind-ui mark {
+    color: #5a8bff;
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__result-nested {
+    border-left-color: #3a3a3a;
+  }
+</style>
+
+<script>
+  // Pagefind 在构建时生成，开发模式下不加载
+  if (window.location.protocol !== 'file:') {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/pagefind/pagefind-ui.css';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = '/pagefind/pagefind-ui.js';
+    script.onload = () => {
+      // @ts-ignore
+      new PagefindUI({ 
+        element: '#search',
+        showSubResults: true,
+        showImages: false,
+        resetStyles: false
+      });
+    };
+    document.body.appendChild(script);
+  } else {
+    const el = document.getElementById('search')!;
+    el.textContent = '検索功能在构建后可用';
+    el.style.cssText = 'text-align:center;color:#888;padding:40px';
+  }
+</script>

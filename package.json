@@ -1,0 +1,17 @@
+{
+  "name": "krya-ja",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "ja.krya.com - Jin の個人ブログ（Astro・日本語）",
+  "author": "Jin",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/post-build-image-processor.js && npx pagefind --site dist",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.18",
+    "astro": "^6.1.8",
+    "marked": "^18.0.2"
+  }
+}
