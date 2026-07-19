@@ -159,11 +159,19 @@ export function stripMarkdown(content: string): string {
 // 计算字数
 export function countWords(content: string): number {
   const plainText = stripMarkdown(content);
+  // 漢字 (CJK)
   const chineseChars = plainText.match(/[\u4e00-\u9fa5]/g);
   const chineseCount = chineseChars ? chineseChars.length : 0;
+  // 英文单词
   const englishWords = plainText.match(/[a-zA-Z0-9]+/g);
   const englishCount = englishWords ? englishWords.length : 0;
-  return chineseCount + englishCount;
+  // ひらがな
+  const hiraganaChars = plainText.match(/[\u3040-\u309F]/g);
+  const hiraganaCount = hiraganaChars ? hiraganaChars.length : 0;
+  // カタカナ
+  const katakanaChars = plainText.match(/[\u30A0-\u30FF]/g);
+  const katakanaCount = katakanaChars ? katakanaChars.length : 0;
+  return chineseCount + englishCount + hiraganaCount + katakanaCount;
 }
 
 // 格式化文章列表
