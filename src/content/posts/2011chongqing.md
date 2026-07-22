@@ -1,5 +1,5 @@
 ---
-title: 解放碑のロレックス——重慶
+title: "解放碑のロレックス——重慶"
 pubDate: 2011-09-06
 author: jin
 categories:
