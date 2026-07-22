@@ -1,5 +1,5 @@
 ---
-title: 滇西紀行：シャングリラ——徳欽
+title: "滇西紀行：シャングリラ——徳欽"
 pubDate: 2012-10-13
 author: jin
 categories:

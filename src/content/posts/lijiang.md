@@ -1,5 +1,5 @@
 ---
-title: 滇西紀行：麗江
+title: "滇西紀行：麗江"
 pubDate: 2012-10-14
 author: Jin
 categories:
