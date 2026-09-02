@@ -1,5 +1,5 @@
 ---
-title: "僕の電子的故郷——香港"
+title: "僕の電子的故郷——香港（2025）"
 pubDate: '2025-03-01'
 author: jin
 draft: false
