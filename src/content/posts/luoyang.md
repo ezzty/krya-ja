@@ -1,5 +1,5 @@
 ---
-title: 春休みロードトリップ 洛陽へ
+title: "西安・洛陽・襄陽ロードトリップ（2026）"
 pubDate: '2026-04-08'
 author: jin
 draft: false
